@@ -1,3 +1,31 @@
-baseURL = "http://example.org/"
+baseURL = "http://md5orsha256.com/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Dmitry Stepanov"
+
+[params.logo]
+    logoText     = "$ cd ~/"
+    logoHomeLink = "/"
+    logoCursorColor    = "#32CD32"
+
+ # Social icons
+  [[params.social]]
+    name = "email"
+    url  = "mailto:md5orsha256@gmail.com"
+
+  [[params.social]]
+    name = "github"
+    url  = "https://github.com/md5orsha256"
+
+  [[params.social]]
+    name = "linkedin"
+    url  = "https://www.linkedin.com/in/stepanov-dmitry"
+
+  [[params.social]]
+    name = "gitlab"
+    url  = "https://www.gitlab.com/md5orsha256"
+
+[languages]
+  [languages.en]
+    subtitle  = "Web development"
+    weight    = 1
+    copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
