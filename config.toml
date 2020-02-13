@@ -27,6 +27,10 @@ theme = "hello-friend-ng"
     name = "gitlab"
     url  = "https://www.gitlab.com/md5orsha256"
 
+  [[params.social]]
+    name = "hackerrank"
+    url  = "https://www.hackerrank.com/md5orsha256"
+
 [languages]
   [languages.en]
     subtitle  = "Web development"
