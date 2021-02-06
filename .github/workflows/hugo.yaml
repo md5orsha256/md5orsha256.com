@@ -15,4 +15,4 @@
          username: ${{ secrets.USERNAME }}
          key: ${{ secrets.KEY }}
          port: ${{ secrets.PORT }}
-         script: git pull; git submodule update --init --recursive; hugo; cp -r ./public/* /home/gh_actions/server/hugo_site/.; rm -rf ./public
+         script: cd /home/runner/work/hugo_personal_site/hugo_personal_site;  git pull; git submodule update --init --recursive; hugo; cp -r ./public/* /home/gh_actions/server/hugo_site/.; rm -rf ./public
