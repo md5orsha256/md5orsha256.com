@@ -15,7 +15,7 @@ jobs:
         with:
           hugo-version: 'latest'
       - name: Build
-        run: pwd ; ls -lah ; ls -lah /home/runner/work/hugo_personal_site/ ; hugo -D
+        run: hugo -D
       - name: copy file via ssh key
         uses: appleboy/scp-action@master
         with:
