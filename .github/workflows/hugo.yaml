@@ -1,18 +1,21 @@
- name: deploy
+name: deploy
 
- on: [push]
+on: [push]
 
- jobs:
-   build:
-
-     runs-on: ubuntu-latest
-    
-     steps:
-     - name: executing remote ssh commands using key
-       uses: appleboy/ssh-action@master
-       with:
-         host: ${{ secrets.HOST }}
-         username: ${{ secrets.USERNAME }}
-         key: ${{ secrets.KEY }}
-         port: ${{ secrets.PORT }}
-         script: cd /home/runner/work/hugo_personal_site/hugo_personal_site;  git pull; git submodule update --init --recursive; hugo; cp -r ./public/* /home/gh_actions/server/hugo_site/.; rm -rf ./public
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+      - name: executing remote ssh commands using key
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+          script: cd /home/runner/work/hugo_personal_site/hugo_personal_site && pwd && ls -lah && git pull && git submodule update --init --recursive && hugo && cp -r ./public/* /home/gh_actions/server/hugo_site/. && rm -rf ./public
+          
