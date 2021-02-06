@@ -10,12 +10,23 @@ jobs:
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 'latest'
-      - name: executing remote ssh commands using key
-        uses: appleboy/ssh-action@master
+      - name: Build
+        run: hugo -D
+      - name: copy file via ssh key
+        uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
-          script: cd /home/runner/server/hugo_site ; pwd && ls -lah && ls -lah server/hugo_site && git pull && git submodule update --init --recursive && hugo && cp -r ./public/* /home/gh_actions/server/hugo_site/. && rm -rf ./public
+          key: ${{ secrets.KEY }}
+          source: "public/*"
+          target: "server/hugo_site"
+      # - name: executing remote ssh commands using key
+      #   uses: appleboy/ssh-action@master
+      #   with:
+      #     host: ${{ secrets.HOST }}
+      #     username: ${{ secrets.USERNAME }}
+      #     key: ${{ secrets.KEY }}
+      #     port: ${{ secrets.PORT }}
+      #     script: cd /home/runner/server/hugo_site ; pwd && ls -lah && ls -lah server/hugo_site && git pull && git submodule update --init --recursive && hugo && cp -r ./public/* /home/gh_actions/server/hugo_site/. && rm -rf ./public
           
