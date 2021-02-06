@@ -16,12 +16,16 @@ theme = "hello-friend-ng"
     url  = "mailto:md5orsha256@gmail.com"
 
   [[params.social]]
-    name = "github"
-    url  = "https://github.com/md5orsha256"
-
-  [[params.social]]
     name = "linkedin"
     url  = "https://www.linkedin.com/in/stepanov-dmitry"
+
+  [[params.social]]
+    name = "telegram"
+    url  = "https://t.me/md5orsha256"
+
+  [[params.social]]
+    name = "github"
+    url  = "https://github.com/md5orsha256"
 
   [[params.social]]
     name = "gitlab"
