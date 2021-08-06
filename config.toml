@@ -1,9 +1,40 @@
-baseURL = "http://md5orsha256.com/"
+# baseURL = "http://md5orsha256.com/"
 languageCode = "en-us"
 title = "Dmitry Stepanov"
 
 DefaultContentLanguage = "en"
 theme = "hello-friend-ng"
+
+
+
+PygmentsCodeFences = true
+PygmentsStyle = "monokai"
+paginate  = 10
+rssLimit  = 10  # Maximum number of items in the RSS feed.
+copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License." # This mess
+archetypeDir = "archetypes"
+contentDir   = "content"
+dataDir      = "data"
+layoutDir    = "layouts"
+publishDir   = "public"
+
+buildDrafts  = false
+buildFuture  = false
+buildExpired = false
+canonifyURLs = true
+
+enableRobotsTXT = true
+enableGitInfo   = false
+enableEmoji     = true
+enableMissingTranslationPlaceholders = false
+disableRSS     = false
+disableSitemap = false
+disable404     = false
+disableHugoGeneratorInject = false
+
+
+# [permalinks]
+#   posts = "/posts/:year/:month/:title/"
 
 [params.logo]
     logoText     = "$ cd ~/"
@@ -40,3 +71,10 @@ theme = "hello-friend-ng"
     subtitle  = "Web development"
     weight    = 1
     copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+
+
+# [menu]
+#   [[menu.main]]
+#     identifier = "posts"
+#     name       = "Posts"
+#     url        = "posts/"
