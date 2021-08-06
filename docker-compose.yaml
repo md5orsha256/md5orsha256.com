@@ -4,7 +4,7 @@ services:
     image: klakegg/hugo:0.80.0
     volumes:
       - ".:/src"
-  web-server:
+  nginx:
     image: nginx:latest
     ports:
       - 80:80
